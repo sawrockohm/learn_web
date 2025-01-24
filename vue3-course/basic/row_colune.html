@@ -1,0 +1,28 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<div class="row">
+    <div class="column">
+        content 1
+    </div>
+    <div class="column">content 2</div>
+    <div class="column">content 3</div>
+    <div class="column">content 3</div>
+    <div class="column">content 3</div>
+</div>
+
+<style>
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .column {
+        flex: 1;
+        min-width: 100px;
+        max-width: 300px;
+        background-color: lightblue;
+        text-align: center;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+</style>

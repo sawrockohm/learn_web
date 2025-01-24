@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue 3.4 Template</title>
+  <link rel="stylesheet" href="https://unpkg.com/normalize.css/normalize.css">
+  <script src="https://unpkg.com/vue@3.4.0"></script>
+  <style type="text/css">
+    .can {
+      color: green;
+    }
+
+    .cant {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <div>
+      <div>{{message}}</div>
+      <div>Can you Drive:
+        <span :class="{can:canDrive === 'Yes',cant:canDrive === 'No'}"> {{canDrive}} </span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const { createApp, ref, computed } = Vue; // ใช้สร้าง Vue application.
+    const App = {   // js
+      setup() {
+        console.log("age")
+
+        let message = ref("hello")
+        let age = ref(null)
+        let canDrive = computed(
+          () => {
+            return age.value >= 18 ? "Yes" : "No"
+          }
+        )
+
+        setTimeout(() => {
+          console.log("bye!!!")
+          message.value = "bye!!!"
+          age.value = 24
+        }, 2000);
+
+        return {
+          message, canDrive
+        }
+      },
+    };
+    createApp(App).mount('#app');
+  </script>
+
+</body>
+
+</html>
+
+<style type="text/css">
+  body {
+    font-family: monospace;
+    padding: 20px;
+    font-size: 2em;
+  }
+</style>
+
+<!-- table.table-list>tr>td.list-item*4
+<table class="table-list">
+  <tr>
+    <td class="list-item"></td>
+    <td class="list-item"></td>
+    <td class="list-item"></td>
+    <td class="list-item"></td>
+  </tr>
+</table> -->
+
+div.div-list>tr>td.list-item*2
+<div class="div-list">
+  <tr>
+    <td class="list-item"></td>
+    <td class="list-item"></td>
+  </tr>
+</div>

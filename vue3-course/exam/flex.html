@@ -1,0 +1,31 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<div class="row">
+    <div class="item"> item 123</div>
+    <div class="item"> item 123</div>
+    <div class="item"> item 123</div>
+    <div class="item"> item 123</div>
+    <div class="item"> item 123</div>
+
+</div>
+
+<style>
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .item {
+        flex: 1;
+        /* flex: 1 1 150px; */
+        background-color: aqua;
+        height: 300;
+        text-align: center;
+    }
+
+    @media (max-width: 768px) {
+        .item {
+            flex: 1 1 150px;
+        }
+    }
+</style>

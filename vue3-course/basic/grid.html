@@ -1,0 +1,64 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- การเลือกใช้ Flexbox หรือ CSS Grid
+Flexbox: ดีสำหรับ layout แบบแถวเดียวหรือคอลัมน์เดียว เช่น การจัด row หรือ column แบบเรียบง่าย
+CSS Grid: เหมาะสำหรับ layout ที่ซับซ้อน มีหลาย row และ column ที่ต้องการการควบคุมขนาดอย่างละเอียด -->
+
+<div class="grid">
+    <div class="item">
+        <p>ssss</p>
+        <p>ssss</p>
+        <p>ssss</p>
+        <p>ssss</p>
+        <p>ssss</p>
+        <p>ssss</p>
+        <p>ssss</p>
+        <p>ssss</p>
+        <p>ssss</p>
+        <p>ssss</p>
+        <p>ssss</p>
+        <p>ssss</p>
+        <p>ssss</p>
+        <p>ssss</p>
+        <p>ssss</p>
+        <p>ssss</p>
+    </div>
+    <div class="item">column 2</div>
+    <div class="item">column 3</div>
+    <div class="item">column 3</div>
+    <div class="item">column 3</div>
+    <div class="item">column 3</div>
+    <div class="item">column 3</div>
+
+</div>
+
+<style>
+    .grid {
+        margin: 16;
+        background-color: red;
+        display: grid;
+        /* grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); */
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, auto);
+        gap: 15px;
+    }
+
+    .item {
+        background-color: lightblue;
+        text-align: center;
+        padding: 20px;
+        /* height: 300; */
+        box-sizing: border-box;
+    }
+
+
+    /* สำหรับหน้าจอเล็ก (มือถือ) */
+    @media (max-width: 768px) {
+        .grid {
+            grid-template-columns: 1fr;
+            /* 1 column in small screens */
+            grid-template-rows: repeat(4, auto);
+            /* 4 rows in small screens (เนื่องจากมี 4 items) */
+        }
+    }
+</style>
