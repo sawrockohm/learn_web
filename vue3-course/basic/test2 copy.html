@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Between Example</title>
+    <style>
+        html,
+        body {
+            background-color: teal;
+            padding: 0;
+            margin: 0;
+            height: 100%;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            /* แก้จาก Row เป็น Column */
+            justify-content: space-between;
+            /* กระจายช่องว่างระหว่าง items */
+            align-items: center;
+            /* จัดให้อยู่ตรงกลางตามแนวนอน */
+            height: 100vh;
+            background-color: lightgray;
+            border-radius: 8px;
+            padding: 16px;
+        }
+
+        .container2 {
+            display: flex;
+            flex-direction: row;
+            gap: 16px;
+            /* เพิ่มช่องว่างระหว่าง center1 และ center2 */
+            background-color: white;
+            border-radius: 8px;
+            padding: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .up,
+        .down {
+            background-color: red;
+            width: 100px;
+            height: 100px;
+            /* แก้จาก 100% เป็นขนาดคงที่ */
+            border-radius: 8px;
+        }
+
+        .down {
+            background-color: blue;
+        }
+
+        .center1,
+        .center2 {
+            background-color: lightblue;
+            width: 150px;
+            height: 150px;
+            border-radius: 8px;
+        }
+
+        .center2 {
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="up"></div>
+        <div class="container2">
+            <div class="center1"></div>
+            <div class="center2"></div>
+        </div>
+        <div class="down"></div>
+    </div>
+</body>
+
+</html>

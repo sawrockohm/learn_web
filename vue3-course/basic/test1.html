@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Between Example</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="itemRed">Item ซ้าย</div>
+        <!-- <div class="itemCenter">Item ซ้าย</div> -->
+         <div class="center">
+            <div class="itemCenter1"></div>
+            <div class="itemCenter2"></div>
+         </div>
+        <div class="itemYello">Item ขวา</div>
+    </div>
+</body>
+</html>
+
+<style>
+    body {
+        background-color: teal;
+    }
+
+    .container {
+        display: flex;
+        /* เปิดการใช้งาน Flexbox */
+        justify-content: space-between;
+        /* กระจายช่องว่างระหว่าง Items */
+        align-items: center;
+        /* จัดตำแหน่งแนวตั้งให้อยู่ตรงกลาง */
+        padding: 20px;
+        /* background-color: teal; */
+        /* สีพื้นหลังสำหรับความชัดเจน */
+        /* border: 1px solid #ccc; */
+        /* เส้นขอบ */
+    }
+
+    .itemRed {
+        background-color: red;
+        /* สีพื้นหลังของ Item */
+        padding: 15px 30px;
+        /* ระยะห่างภายใน */
+        border-radius: 8px;
+        /* มุมโค้งมน */
+        font-size: 18px;
+        /* ขนาดตัวอักษร */
+        font-weight: bold;
+        /* ตัวหนา */
+        height: 600px;
+    }
+
+    .itemCenter1 {
+        background-color: lightblue;
+        /* สีพื้นหลังของ Item */
+        padding: 15px 30px;
+        /* ระยะห่างภายใน */
+        border-radius: 8px;
+        /* มุมโค้งมน */
+        font-size: 18px;
+        /* ขนาดตัวอักษร */
+        font-weight: bold;
+        /* ตัวหนา */
+        height: 100px;
+        width: 200px;
+    }
+
+    .itemCenter2 {
+        background-color: lightcoral;
+        /* สีพื้นหลังของ Item */
+        padding: 15px 30px;
+        /* ระยะห่างภายใน */
+        border-radius: 8px;
+        /* มุมโค้งมน */
+        font-size: 18px;
+        /* ขนาดตัวอักษร */
+        font-weight: bold;
+        /* ตัวหนา */
+        height: 100px;
+        width: 200px;
+    }
+
+    .itemYello {
+        background-color: yellow;
+        /* สีพื้นหลังของ Item */
+        padding: 15px 30px;
+        /* ระยะห่างภายใน */
+        border-radius: 8px;
+        /* มุมโค้งมน */
+        font-size: 18px;
+        /* ขนาดตัวอักษร */
+        font-weight: bold;
+        /* ตัวหนา */
+        height: 600px;
+    }
+</style>

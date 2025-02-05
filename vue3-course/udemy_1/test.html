@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue 3.4 Template</title>
+  <link rel="stylesheet" href="https://unpkg.com/normalize.css/normalize.css">
+  <script src="https://unpkg.com/vue@3.4.0"></script>
+  <style type="text/css">
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <div>{{textWorld}}</div>
+    <div>
+      <lable>Enter input {{item}}</lable>
+      <input v-model="uAnwer" />
+    </div>
+    <span>{{indexC}}</span>
+    <span>{{anwer}}</span>
+  </div>
+  <script>
+    const { createApp, ref, computed, watch } = Vue;
+    const App = {
+      setup() {
+        const textWorld = "hello world";
+        const listItems = ["1+1", "2+2", "3+3"];
+        const listItemAnswer = [2, 4, 6];
+        const indexC = ref(0);
+        const item = computed(()=> listItems[indexC.value])
+
+        const point = ref(0);
+        let uAnwer = ref(null)
+
+        watch(indexC, (newVal) => {
+          if (newVal >= listItemAnswer.length) {
+            indexC.value = 0;
+          }
+        });
+
+        let anwer = computed(() => {
+          console.log(indexC.value)
+          if (uAnwer.value == listItemAnswer[indexC.value]) {
+            indexC.value += 1; // เพิ่มค่า indexC
+            point.value += 1;
+            return "Pass";
+          }
+          return "Not Pass";
+          // return uAnwer.value == 2 ? "Pass" : "Not Pass"
+        })
+
+        return {
+          textWorld, item, anwer, uAnwer
+        }
+      },
+    };
+    createApp(App).mount("#app");
+  </script>
+
+</body>
+
+</html>
+
+<style type="text/css">
+  body {
+    font-family: monospace;
+    padding: 20px;
+    font-size: 2em;
+  }
+</style>

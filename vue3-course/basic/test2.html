@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Between Example</title>
+    <style>
+        html,
+        body {
+            background-color: teal;
+            padding: 16;
+            margin: 16;
+            /* height: 100%; */
+        }
+
+        .row {
+            border-radius: 8px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            /* จัดเรียงแนวตั้ง */
+            justify-content: space-between;
+            /* เว้นระยะห่างระหว่าง items */
+            /* height: 100%; */
+            height: 100vh;
+            /* ให้ container สูงเต็มหน้าจอ */
+            background-color: lightgray;
+            /* padding: 20px; */
+        }
+        .column {
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; /* This centers the content horizontally */
+            background-color: yellow;
+            width: 100%;
+        }
+
+
+        /* สำหรับหน้าจอเล็ก (มือถือ) */
+        @media (max-width: 768px) {
+            .container2 {
+                border-radius: 8px;
+                /* display: flex; */
+                flex-direction: column;
+                align-items: center;
+                background-color: lightgray;
+            }
+        }
+
+
+        .up,
+        .down {
+            border-radius: 8px;
+            background-color: red;
+            height: 100%;
+            width: 100px;
+        }
+
+        .down {
+            background-color: blue;
+        }
+
+        .center1,
+        .center2 {
+            border-radius: 8px;
+            background-color: lightblue;
+            height: 200px;
+            width: 100%;
+            max-width: 400px; /* Ensure the width doesn't exceed 400px */
+        }
+
+        .center2 {
+            background-color: lightcoral;
+        }
+        .gab{
+            width: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row">
+        <div class="up"></div>
+        <!-- <div class="center1"></div>
+        <div class="center2"></div> -->
+        <div class="column">
+            <div class="center1"></div>
+            <div class="center2"></div>
+        </div>
+        <div class="down"></div>
+    </div>
+</body>
+
+</html>
